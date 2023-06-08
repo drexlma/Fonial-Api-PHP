@@ -1,6 +1,7 @@
 <?php
 
-require('fonial.class.php');
+require_once('config.php');
+require_once('fonial.class.php');
 
 
 $Fonial = new Fonial();
