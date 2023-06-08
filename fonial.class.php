@@ -1,7 +1,6 @@
 <?php
 
-define('username','xxx');
-define('password','xxx');
+
 define('api_url','https://kundenkonto.fonial.de/api/2.0');
 
 
