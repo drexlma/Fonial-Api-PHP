@@ -6,7 +6,6 @@ define('api_url','https://kundenkonto.fonial.de/api/2.0');
 
 class Fonial{
     private $_sid = false;
-    public $debug = true;
     function __construct(){
         $this->auth();
     }
@@ -51,7 +50,7 @@ class Fonial{
         
         if($session['status'] == 'ok'){
             $sid = $session['sid'];
-            if($this->debug) echo '$sid: '.$sid;
+            if(debug) echo '$sid: '.$sid;
             
             
             $session_authenticate = array(
@@ -61,7 +60,7 @@ class Fonial{
             );
             
             $auth = post(api_url.'/session/authenticate',$session_authenticate);
-            if($this->debug) print_r($auth);
+            if(debug) print_r($auth);
             
             if($auth['status'] == 'ok' && $auth['authenticated'] == '1'){
                 $this->_sid = $sid;
@@ -79,6 +78,7 @@ class Fonial{
 
 function post(String $url, Array $data = array()): Array{
     $jsonData = json_encode($data);
+    if(debug) echo 'call url:'. $url."\n";
     
     $headers = [
         'Content-Type: application/json'
