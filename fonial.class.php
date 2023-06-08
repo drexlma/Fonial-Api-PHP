@@ -43,7 +43,7 @@ class Fonial{
      * @param String $end Zeitstempel (Format YYYY-MM-DD HH:MM:SS), markiert das Ende des auszugebenden Einzelverbindungsnachweises.
      * @return array
      */
-    function journalet(String $start, String $end): Array{
+    function journalGet(String $start, String $end): Array{
         return post(api_url.'/journal/get',array( "sid" => $this->_sid, "start" => $start, "end" => $end) );
     }
     
