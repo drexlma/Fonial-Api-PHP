@@ -32,7 +32,10 @@ class Fonial{
      * @param String $end Zeitstempel (Format YYYY-MM-DD HH:MM:SS), markiert das Ende des auszugebenden Einzelverbindungsnachweises.
      * @return array
      */
-    function evnGet(String $start, String $end): Array{
+    function evnGet(String $start, String $end = ''): Array{
+        if(empty($end)){
+            $end = date('Y-m-d H:i:s');
+        }
         return post(api_url.'/evn/get',array( "sid" => $this->_sid, "start" => $start, "end" => $end) );
     }
     /**
@@ -41,7 +44,10 @@ class Fonial{
      * @param String $end Zeitstempel (Format YYYY-MM-DD HH:MM:SS), markiert das Ende des auszugebenden Einzelverbindungsnachweises.
      * @return array
      */
-    function journalGet(String $start, String $end): Array{
+    function journalGet(String $start, String $end = ''): Array{
+        if(empty($end)){
+            $end = date('Y-m-d H:i:s');
+        }
         return post(api_url.'/journal/get',array( "sid" => $this->_sid, "start" => $start, "end" => $end) );
     }
     
