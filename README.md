@@ -3,6 +3,7 @@ PHP Klasse um über die Api auf die Informationen bei Fonial zuzugreifen
 
 Es gibt eine Beispiel-PHP-Datei die zeigt wie die Datei aufzurufen ist.
 
+Api muss wohl erst freigeschaltet werden.
 https://www.fonial.de/hilfe/api
 
 Der Codeausschnitt zeigt, wie die Fonial-Klasse verwendet wird, um verschiedene API-Endpunkte aufzurufen und die Ergebnisse zu erhalten. Hier ist eine Beschreibung jedes Abschnitts:
