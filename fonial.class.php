@@ -19,8 +19,6 @@ class Fonial{
     }
     /**
      * Diese Methode listet alle verfügbaren Rufnummern eines Benutzerkontos mit deren ID auf. 
-
-
      * @return array
      */
     function numbersGet(): Array{
@@ -51,7 +49,7 @@ class Fonial{
         return post(api_url.'/journal/get',array( "sid" => $this->_sid, "start" => $start, "end" => $end) );
     }
     
-    function auth(){
+    function auth():bool{
         $session = post(api_url.'/session');
         
         if($session['status'] == 'ok'){
